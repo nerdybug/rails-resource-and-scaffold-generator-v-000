@@ -121,3 +121,34 @@ Processing by ArticlesController#create as HTML
   [1m[36m (2.2ms)[0m  [1mcommit transaction[0m
 Redirected to http://174.138.35.103:46022/articles/1
 Completed 302 Found in 57ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/articles/1" for 23.117.64.247 at 2018-07-21 16:35:01 +0000
+Cannot render console from 23.117.64.247! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mArticle Load (0.2ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered articles/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 23ms (Views: 14.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/articles/1/edit" for 23.117.64.247 at 2018-07-21 16:35:07 +0000
+Cannot render console from 23.117.64.247! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.1ms)[0m  [1mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered articles/_form.html.erb (1.5ms)
+  Rendered articles/edit.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 17ms (Views: 16.0ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/articles/1" for 23.117.64.247 at 2018-07-21 16:35:16 +0000
+Cannot render console from 23.117.64.247! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UcMdS69NZa9WohzD9ft8gkHrn8cj95Hbm5dRoIzpC3kbKVj9uDKji+R2j+IFUHewWQTndK4J00pdBjGn2P5HZw==", "article"=>{"title"=>"edit 1", "body"=>"this is the first edit"}, "commit"=>"Update Article", "id"=>"1"}
+  [1m[35mArticle Load (0.1ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "articles" SET "title" = ?, "body" = ?, "updated_at" = ? WHERE "articles"."id" = ?  [["title", "edit 1"], ["body", "this is the first edit"], ["updated_at", "2018-07-21 16:35:16.510653"], ["id", 1]]
+  [1m[36m (3.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://174.138.35.103:46022/articles/1
+Completed 302 Found in 8ms (ActiveRecord: 3.5ms)
